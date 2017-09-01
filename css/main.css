@@ -8,12 +8,6 @@
      padding: 0px;
  }
  
- @media screen and (max-width: 768px) {
-     #container_header-order__phone-number a {
-         font-size: 16px;
-     }
- }
- 
  @media screen and (max-width: 600px) {
      .container_header {
          position: relative;
@@ -39,7 +33,6 @@
          padding: 5px 5px 5px 32px;
          text-align: left;
      }
-     /* при наведении на пункты меню */
      #container_header-nav ul li {
          display: block;
          margin: 0 0 5px;
@@ -53,6 +46,7 @@
          display: none;
      }
  }
+ /*шапка*/
  
  .container_header {
      display: flex;
@@ -65,13 +59,16 @@
      width: 100%;
      margin-top: 4vh;
      font-family: Proxima;
+     z-index: 100000;
  }
+ /*логотип*/
  
  #container_header-logo:nth-child(1) {
      order: 0;
      flex: 0 1 auto;
      align-self: auto;
  }
+ /*навигация*/
  
  #container_header-nav:nth-child(2) {
      margin-top: 1em;
@@ -106,6 +103,7 @@
      border: 1px solid;
      border-color: #2d83ff;
  }
+ /* "заказать столик"*/
  
  .container_header-order:nth-child(3) {
      order: 0;
@@ -116,8 +114,9 @@
  }
  
  .container_slideshow {
-     margin: 0px;
      padding: 0px;
+     position: relative;
+     margin: auto;
  }
  
  #container_header-order__order-table {
@@ -132,11 +131,20 @@
      text-decoration: none;
  }
  
+ @media screen and (max-width: 860px) {
+     #container_header-order__phone-number a {
+         font-size: 16px;
+     }
+ }
+ /*кнопка для мобильных*/
+ 
  #pull {
      display: none;
  }
+ /*стрелки на слайдере*/
  
- .prev .next {
+ .prev,
+ .next {
      cursor: pointer;
      position: absolute;
      top: 50%;
@@ -150,4 +158,73 @@
      border-radius: 0 3px 3px 0;
  }
  
- .next {}
+ .next {
+     right: 8px;
+     border-radius: 3px 0 0 3px;
+ }
+ 
+ .prev:hover,
+ .next:hover {
+     background-color: rgba(0, 0, 0, 0.8);
+ }
+ 
+ .mySlides {
+     text-align: center;
+     max-height: 700px;
+ }
+ 
+ .text {
+     color: #f2f2f2;
+     font-size: 22px;
+     padding: 8px 12px;
+     position: relative;
+     bottom: 90px;
+ }
+ /*полоски слайдов*/
+ 
+ .dot {
+     cursor: pointer;
+     height: 3px;
+     width: 55px;
+     margin: 0 2px;
+     background-color: #0b0a0a;
+     border-radius: 8px;
+     display: inline-block;
+     transition: background-color 0.6s ease;
+     float: right;
+ }
+ /*выровнял полосы состояния слайдов*/
+ 
+ .slides-dots {
+     display: flex;
+     flex-direction: row;
+     flex-wrap: nowrap;
+     justify-content: center;
+     align-content: stretch;
+     align-items: flex-start;
+ }
+ 
+ .active,
+ .dot:hover {
+     background-color: #2d83ff;
+ }
+ 
+ .fade {
+     -webkit-animation-name: fade;
+     -webkit-animation-duration: 1s;
+     animation-name: fade;
+     animation-duration: 1s;
+ }
+ /*@-webkit-keyframes fade{
+	0%{opacity:0.4;}
+	100%{opacity:1;}
+}*/
+ 
+ @keyframes fade {
+     0% {
+         opacity: 0.4;
+     }
+     100% {
+         opacity: 1;
+     }
+ }

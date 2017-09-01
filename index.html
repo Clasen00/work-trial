@@ -9,6 +9,8 @@
     <title>Resto Porto - лучший ресторан по версии знатоков!</title>
     <!--стили-->
     <link rel="stylesheet" href="css/main.css">
+    <!--    JavaScript-->
+    <script src="https://use.fontawesome.com/67014f6acc.js"></script>
 </head>
 
 <body>
@@ -16,28 +18,51 @@
         <!--шапка-->
         <div class="container_header">
             <div id="container_header-logo"><img src="img/logo.png" alt=""></div>
+            <i class="fa fa-bars" id="pull"></i>
             <div id="container_header-nav">
                 <ul>
-                    <li>О ресторане</li>
-                    <li>Акции</li>
-                    <li>Меню</li>
-                    <li>Контакты</li>
+                    <li><a href="#">О ресторане</a></li>
+                    <li><a href="#">Акции</a></li>
+                    <li><a href="#">Меню</a></li>
+                    <li><a href="#">Контакты</a></li>
                 </ul>
             </div>
             <div class="container_header-order">
-                <div id="container_header-order__phone-number"><a href="tel:+7 (4152) 256 55 48">+7 (4152) 256 55 48</a></div>
-                <div id="container_header-order__order-table"></div>
+                <div id="container_header-order__phone-number"><a href="tel:+7 (4152) 256 55 48">+7 (4152) <b>256 55 48</b></a></div>
+                <div id="container_header-order__order-table">Резерв столов</div>
             </div>
         </div>
-        <!--слайдер-->
-        <div class="container_slideshow fade"></div>
-        <!--о шефе-->
-        <div class="container_about_chief">
-            <div id="container_about_chief-chief_foto"></div>
-            <div id="container_about_chief-chief_cite"></div>
-            <div class="button_layer">
-                <a href="#" class="custom_button">О ресторане</a>
-            </div>
+    </div>
+    <!--слайдер-->
+    <div class="container_slideshow fade">
+        <div class="container_slideshow-slides fade">
+            <img src="img/slides/slide1.png" alt="Первый слайд" style="width: 100%">
+            <div class="text">Text</div>
+        </div>
+        <div class="container_slideshow-slides fade">
+            <img src="img/slides/slide1.png" alt="Первый слайд" style="width: 100%">
+            <div class="text">Text2</div>
+        </div>
+        <div class="container_slideshow-slides fade">
+            <img src="img/slides/slide1.png" alt="Первый слайд" style="width: 100%">
+            <div class="text">Text3</div>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094</a>
+        <a class="next" onclick="plusSlides(1)">&#10095</a>
+        <div>
+            <span class="dot" onclick="currSlide(1)"></span>
+            <span class="dot" onclick="currSlide(2)"></span>
+            <span class="dot" onclick="currSlide(3)"></span>
+        </div>
+    </div>
+
+
+    <!--о шефе-->
+    <div class="container_about_chief">
+        <div id="container_about_chief-chief_foto"></div>
+        <div id="container_about_chief-chief_cite"></div>
+        <div class="button_layer">
+            <a href="#" class="custom_button">О ресторане</a>
         </div>
     </div>
 </body>

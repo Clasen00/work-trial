@@ -11,13 +11,21 @@
     <!--стили-->
     <link rel="stylesheet" href="css/main.css">
     <!--    JavaScript-->
-    <!--   <script src="https://use.fontawesome.com/67014f6acc.js"></script>-->
+    <script src="https://use.fontawesome.com/67014f6acc.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
 </head>
 
 <body>
     <div class="container">
         <!--шапка-->
+
         <div class="container_header">
             <div id="container_header-logo"><img src="img/logo.png" alt=""></div>
             <i class="fa fa-bars" id="pull"></i>
@@ -34,39 +42,56 @@
                 <div id="container_header-order__order-table">Резерв столов</div>
             </div>
         </div>
-    </div>
-    <!--слайдер-->
-    <div class="container_slideshow fade">
-        <div class="container_slideshow-slides fade">
-            <img src="img/slides/slide1.png" alt="Первый слайд" style="width: 100%">
-            <div class="text">Text</div>
-        </div>
-        <div class="container_slideshow-slides fade">
-            <img src="img/slides/slide2.jpg" alt="Первый слайд" style="width: 100%">
-            <div class="text">Text2</div>
-        </div>
-        <div class="container_slideshow-slides fade">
-            <img src="img/slides/slide3.jpg" alt="Первый слайд" style="width: 100%">
-            <div class="text">Text3</div>
-        </div>
-        <a class="prev" onclick="plusSlides(-1)">&#10094</a>
-        <a class="next" onclick="plusSlides(1)">&#10095</a>
-        <div class="slides-dots">
-            <span class="dot" onclick="currSlide(1)"></span>
-            <span class="dot" onclick="currSlide(2)"></span>
-            <span class="dot" onclick="currSlide(3)"></span>
-        </div>
-    </div>
 
-    <!--о шефе-->
-    <div class="container_about_chief">
-        <div id="container_about_chief-chief_foto"></div>
-        <div id="container_about_chief-chief_cite"></div>
-        <div class="button_layer">
-            <a href="#" class="custom_button">О ресторане</a>
+        <!--слайдер-->
+        <div class="container_slideshow fade">
+            <div class="container_slideshow-slides fade">
+                <img src="img/slides/slide1.png" alt="Первый слайд" style="width: 100%">
+                <div class="text">Text</div>
+            </div>
+            <div class="container_slideshow-slides fade">
+                <img src="img/slides/slide2.jpg" alt="Первый слайд" style="width: 100%">
+                <div class="text">Text2</div>
+            </div>
+            <div class="container_slideshow-slides fade">
+                <img src="img/slides/slide3.jpg" alt="Первый слайд" style="width: 100%">
+                <div class="text">Text3</div>
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094</a>
+            <a class="next" onclick="plusSlides(1)">&#10095</a>
+            <div class="slides-dots">
+                <span class="dot" onclick="currSlide(1)"></span>
+                <span class="dot" onclick="currSlide(2)"></span>
+                <span class="dot" onclick="currSlide(3)"></span>
+            </div>
+        </div>
+
+        <!--о шефе-->
+        <!--        article - это чтобы картинку и текст красиво рядом разместить https://codepen.io/wolf-w/pen/gbGBeZ-->
+        <div class="container_about_chief">
+            <div class="wrap">
+                <article id="container_about_chief">
+                    <div id="container_about_chief-chief_foto"><img src="img/michael-schwartz-612x338.png" alt=""></div>
+                    <p>Александр <br> Константинопольский
+                    </p>
+                </article>
+                <article id="container_about_chief-chief_cite">
+                    <p>
+                        <i>Наш ресторан очень четкий. Если бы не русская речь, <br>
+то можно было бы подумать, что ты в миланском ресторане. <br>
+По этой причине стараюсь работать в берушах.</i>
+                    </p>
+                </article>
+            </div>
+            <div class="button_layer">
+                <button class="custom_button">О ресторане</button>
+            </div>
+        </div>
+
+        <div class="container-top_eat">
+            <div class="container-top_eat__title">Популярные блюда</div>
         </div>
     </div>
-
 </body>
 <script src="main.js"></script>
 

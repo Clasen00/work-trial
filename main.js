@@ -1,5 +1,7 @@
+//слайдер
 let slideIndex = 1;
 showSlides(slideIndex);
+
 
 
 function plusSlides(n) {
@@ -12,9 +14,9 @@ function currSlide(n) {
 
 
 function showSlides(n) {
-    var i;
+    let i;
     const slides = document.getElementsByClassName("container_slideshow-slides");
-    var dots = document.getElementsByClassName("dot");
+    const dots = document.getElementsByClassName("dot");
 
     if (n > slides.length) {
         slideIndex = 1;
@@ -31,3 +33,19 @@ function showSlides(n) {
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
 }
+
+//тень для меню
+const getBodyScrollTop = function () {
+    const header = document.getElementsByClassName("container_header")[0];
+    let offset = this.pageYOffset;
+    //если проскролили на 150 то добавляем класс scroll
+    if (offset > 150) {
+        header.classList.add("scroll");
+    }
+    //для меню в самом верху страницы класс удаляем
+    if (offset === 0) {
+        header.classList.remove("scroll");
+    }
+};
+
+window.addEventListener("scroll", getBodyScrollTop.bind(this), false);

@@ -6,12 +6,13 @@
     <meta charset="UTF-8">
     <meta name="description" content="Лучший ресторан итальянской кухни в Петропавловске Камчатском">
     <meta name="keywords" content="Италия, Петропавловск Камчатский, Итальянская кухня, Еда, Ресторан, Заказать стол">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--  <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <meta name="viewport" content="width=device-width, user-scalable=no">
     <title>Resto Porto - лучший ресторан по версии знатоков!</title>
     <!--стили-->
     <link rel="stylesheet" href="css/main.css">
     <!--    JavaScript-->
-    <script src="https://use.fontawesome.com/67014f6acc.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0ZHToqOv9FuxWxw86PnhkXqX19CHJQ_4&callback=initMap" type="text/javascript"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -23,43 +24,47 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" id="top-page">
         <!--шапка-->
 
         <div class="container_header">
             <div id="container_header-logo"><img src="img/logo.png" alt=""></div>
-            <i class="fa fa-bars" id="pull"></i>
+            <!--            <div id="mobile_nav_icon"></div>-->
             <div id="container_header-nav">
                 <ul>
-                    <li><a href="#">О ресторане</a></li>
-                    <li><a href="#">Акции</a></li>
-                    <li><a href="#">Меню</a></li>
-                    <li><a href="#">Контакты</a></li>
+                    <li><a href="#about-restaurant">О ресторане</a></li>
+                    <li><a href="#top-page">Акции</a></li>
+                    <li><a href="#top-eat">Меню</a></li>
+                    <li><a href="#container-contacts_number">Контакты</a></li>
                 </ul>
             </div>
             <div class="container_header-order">
-                <div id="container_header-order__phone-number"><a href="tel:+7 (4152) 256 55 48">+7 (4152) <b>256 55 48</b></a></div>
+                <div id="container_header-order__phone-number"><a href="tel:+7 (4152) 256 55 48">+7 <span class="blue-brackets">(</span>4152<span class="blue-brackets">)</span> <b>256 55 48</b></a></div>
                 <div id="container_header-order__order-table">Резерв столов</div>
             </div>
         </div>
-
         <!--слайдер-->
         <div class="container_slideshow fade">
             <div class="container_slideshow-slides fade">
-                <img src="img/slides/slide1.png" alt="Первый слайд" style="width: 100%">
-                <div class="text">Text</div>
+                <img src="img/slides/slide1.jpg" alt="Первый слайд" style="width: 100%">
+                <div class="text">Лучший ресторан по версии знатоков
+                    <div class="button_layer">
+                        <button class="custom_button">О ресторане</button>
+                    </div>
+                </div>
             </div>
             <div class="container_slideshow-slides fade">
-                <img src="img/slides/slide2.jpg" alt="Первый слайд" style="width: 100%">
-                <div class="text">Text2</div>
+                <img src="img/slides/slide2.jpg" alt="Второй слайд" style="width: 100%">
+                <div class="text">Resto Porto подарит Вам потрясающую атмосферу Италии
+                </div>
             </div>
             <div class="container_slideshow-slides fade">
-                <img src="img/slides/slide3.jpg" alt="Первый слайд" style="width: 100%">
-                <div class="text">Text3</div>
+                <img src="img/slides/slide3.jpg" alt="Третий слайд" style="width: 100%">
+                <div class="text">Мы чтим кулинарные традиции Италии</div>
             </div>
             <a class="prev" onclick="plusSlides(-1)">&#10094</a>
             <a class="next" onclick="plusSlides(1)">&#10095</a>
-            <div class="slides-dots">
+            <div class="slides-dots" id="about-restaurant">
                 <span class="dot" onclick="currSlide(1)"></span>
                 <span class="dot" onclick="currSlide(2)"></span>
                 <span class="dot" onclick="currSlide(3)"></span>
@@ -70,18 +75,18 @@
         <!--        article - это чтобы картинку и текст красиво рядом разместить https://codepen.io/wolf-w/pen/gbGBeZ-->
         <div class="container_about_chief">
             <div class="wrap">
-                <article id="container_about_chief">
-                    <div id="container_about_chief-chief_foto"><img src="img/michael-schwartz-612x338.png" alt=""></div>
+                <div id="container_about_chief">
+                    <div id="container_about_chief-chief_foto"><img src="img/michael-schwartz-612x338.png" alt="Повар Александр Константинопольский"></div>
                     <p>Александр <br> Константинопольский
                     </p>
-                </article>
-                <article id="container_about_chief-chief_cite">
+                </div>
+                <div id="container_about_chief-chief_cite">
                     <p>
                         <i>Наш ресторан очень четкий. Если бы не русская речь, <br>
 то можно было бы подумать, что ты в миланском ресторане. <br>
 По этой причине стараюсь работать в берушах.</i>
                     </p>
-                </article>
+                </div>
             </div>
             <div class="button_layer">
                 <button class="custom_button">О ресторане</button>
@@ -89,8 +94,149 @@
         </div>
 
         <div class="container-top_eat">
-            <div class="container-top_eat__title">Популярные блюда</div>
+            <div class="container_title" id="top-eat">Популярные блюда</div>
+            <div class="container-top_eat-panel">
+                <ul class="container-top_eat-panel__menu">
+                    <div class="menu_left-side">
+                        <li>
+                            <div class="container-top_eat-panel__menu_content"> <img src="img/bludo1.jpg" alt="Дорадо по-сицилийски"></div>
+                        </li>
+                        <li>
+                            <div class="container-top_eat-panel__menu_content menu-caption">
+                                <p class="menu-caption_top-caption">Дорадо по-сицилийски</p>
+                                <p class="menu-caption_middle-caption">дорадо, жареная на гриле</p>
+                                <div class="caption-empty-div"></div>
+                                <hr class="pharagraph-line">
+                                <div class="caption-price">
+                                    <p class="caption-weight"> 400/50/70</p>
+                                    <p class="price">1200 <span class="rouble">j</span></p>
+                                </div>
+                            </div>
+                        </li>
+                    </div>
+                    <div class="menu_right-side">
+                        <li>
+                            <div class="container-top_eat-panel__menu_content"><img src="img/bludo2.jpg" alt="креветки томленые"></div>
+                        </li>
+                        <li>
+                            <div class="container-top_eat-panel__menu_content menu-caption">
+                                <p class="menu-caption_top-caption">креветки томленые</p>
+                                <p class="menu-caption_middle-caption">королевские креветки с острым томатным соусом</p>
+                                <div class="caption-empty-div"></div>
+                                <hr class="pharagraph-line">
+                                <div class="caption-price">
+                                    <p class="caption-weight"> 200/100</p>
+                                    <p class="price">1050 <span class="rouble">j</span></p>
+                                </div>
+                            </div>
+                        </li>
+                    </div>
+                </ul>
+                <ul class="container-top_eat-panel__menu">
+                    <div class="menu_left-side">
+                        <li>
+                            <div class="container-top_eat-panel__menu_content "> <img src="img/bludo3.jpg" alt="Дорадо по-сицилийски"></div>
+                        </li>
+                        <li>
+                            <div class="container-top_eat-panel__menu_content menu-caption">
+                                <p class="menu-caption_top-caption">суп средиземноморский</p>
+                                <p class="menu-caption_middle-caption">суп из морепродуктов на томатном соусе</p>
+                                <div class="caption-empty-div"></div>
+                                <hr class="pharagraph-line">
+                                <div class="caption-price">
+                                    <p class="caption-weight"> 350</p>
+                                    <p class="price">700 <span class="rouble">j</span></p>
+                                </div>
+                            </div>
+                        </li>
+                    </div>
+                    <div class="menu_right-side">
+                        <li>
+                            <div class="container-top_eat-panel__menu_content"><img src="img/bludo4.jpg" alt="креветки томленые"></div>
+                        </li>
+                        <li>
+                            <div class="container-top_eat-panel__menu_content menu-caption">
+                                <p class="menu-caption_top-caption">филе черного ангуса</p>
+                                <p class="menu-caption_middle-caption">филе говядины под сливочным соусом</p>
+                                <div class="caption-empty-div"></div>
+                                <hr class="pharagraph-line">
+                                <div class="caption-price">
+                                    <p class="caption-weight"> 200/50</p>
+                                    <p class="price">1100 <span class="rouble">j</span></p>
+                                </div>
+                            </div>
+                        </li>
+                    </div>
+                </ul>
+                <ul class="container-top_eat-panel__menu">
+                    <div class="menu_left-side">
+                        <li>
+                            <div class="container-top_eat-panel__menu_content"> <img src="img/bludo5.jpg" alt="Дорадо по-сицилийски"></div>
+                        </li>
+                        <li>
+                            <div class="container-top_eat-panel__menu_content menu-caption">
+                                <p class="menu-caption_top-caption">Морская пена</p>
+                                <p class="menu-caption_middle-caption">морские гребешки со свежим шпинатом, под трюфельным соусом</p>
+                                <div class="caption-empty-div"></div>
+                                <hr class="pharagraph-line">
+                                <div class="caption-price">
+                                    <p class="caption-weight"> 250/50</p>
+                                    <p class="price">900 <span class="rouble">j</span></p>
+                                </div>
+                            </div>
+                        </li>
+                    </div>
+                    <div class="menu_right-side">
+                        <li>
+                            <div class="container-top_eat-panel__menu_content"><img src="img/bludo6.jpg" alt="креветки томленые"></div>
+                        </li>
+                        <li>
+                            <div class="container-top_eat-panel__menu_content menu-caption">
+                                <p class="menu-caption_top-caption">Ассорти-марино</p>
+                                <p class="menu-caption_middle-caption">ассорти из морепродуктов</p>
+                                <div class="caption-empty-div"></div>
+                                <hr class="pharagraph-line">
+                                <div class="caption-price">
+                                    <p class="caption-weight"> 500</p>
+                                    <p class="price">1300 <span class="rouble">j</span></p>
+                                </div>
+                            </div>
+                        </li>
+                    </div>
+                </ul>
+                <div class="button_layer">
+                    <button class="custom_button">Посмотреть меню</button>
+                </div>
+            </div>
         </div>
+        <div class="container-map">
+            <div class="container_title">КАРТА ПРОЕЗДА</div>
+            <p id="container_map-title">Петропавловск-Камчатский, <br> проспект Академика Королева, 67</p>
+            <div id="map"></div>
+        </div>
+        <div class="container-contacts">
+            <span id="container-contacts_number"><a href="tel:+7 (4152) 256 55 48">+7 <span class="blue-brackets">(</span>4152<span class="blue-brackets">)</span> <b>256 55 48</b></a>
+            </span>
+            <div></div>
+            <br><span style="color: #5791f5">Резерв столов</span>
+        </div>
+
+        <footer>
+            <div class="footer-link">
+                <a href="reserv@restoporto.ru"></a>reserv@restoporto.ru</div>
+            <div class="social-icons">
+                <div>
+                    <a href="#"><img src="img/instagram.png" alt="instagram"></a>
+                </div>
+                <div id="second-image">
+                    <a href="#"><img src="img/facebook.png" alt="facebook"></a>
+                </div>
+                <div>
+                    <a href="#"><img src="img/vk.png" alt="vk"></a>
+                </div>
+            </div>
+            <div class="footer-link">типовое решение от <a href="">DVIGA</a></div>
+        </footer>
     </div>
 </body>
 <script src="main.js"></script>

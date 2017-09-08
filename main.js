@@ -1,8 +1,7 @@
 //слайдер
+
 let slideIndex = 1;
 showSlides(slideIndex);
-
-
 
 function plusSlides(n) {
     showSlides(slideIndex += n);
@@ -11,7 +10,6 @@ function plusSlides(n) {
 function currSlide(n) {
     showSlides(slideIndex = n);
 }
-
 
 function showSlides(n) {
     let i;
@@ -34,7 +32,7 @@ function showSlides(n) {
     dots[slideIndex - 1].className += " active";
 }
 
-//тень для меню
+//тень для меню при скроллинге
 const getBodyScrollTop = function () {
     const header = document.getElementsByClassName("container_header")[0];
     let offset = this.pageYOffset;
@@ -49,3 +47,26 @@ const getBodyScrollTop = function () {
 };
 
 window.addEventListener("scroll", getBodyScrollTop.bind(this), false);
+
+//карта & HTML5 API Geolacation
+function initMap() {
+    const lat = 53.0649906;
+    const lon = 158.6442063;
+    const latlon = new google.maps.LatLng(lat, lon);
+    const map = new google.maps.Map(document.getElementById("map"), {
+        center: {
+            lat: 53.0649906,
+            lng: 158.6442063
+        },
+        zoom: 18,
+        marker: true
+    });
+    const marker = new google.maps.Marker({
+        position: latlon,
+        map: map,
+        title: "Петропавловск-Камчатский, проспект Академика Королева, 67"
+    });
+
+}
+
+initMap();

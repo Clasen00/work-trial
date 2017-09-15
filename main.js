@@ -1,3 +1,8 @@
+/* option for jshint esnext https://software.intel.com/en-us/forums/intel-xdk/topic/560783*/
+
+/*jshint esnext: true */
+
+
 //слайдер
 
 let slideIndex = 1;
@@ -68,5 +73,4 @@ function initMap() {
     });
 
 }
-
 initMap();
